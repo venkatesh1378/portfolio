@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --dark-blue: #2c3e50;
+    --light-blue: #3498db;
+    --text-light: #ecf0f1;
+}
+
+
+/* Background Styles */
+
+.home-redirect-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #64ffda, #00b894);
+    color: #0a192f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #64ffda;
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+    margin-top: 30px;
+}
+
+.home-redirect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.5);
+    color: #0a192f;
+    background: linear-gradient(45deg, #00b894, #64ffda);
+}
+
+.home-redirect-btn i {
+    transition: transform 0.3s ease;
+}
+
+.home-redirect-btn:hover i {
+    transform: scale(1.1);
+}
+
+.internship-page {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    position: relative;
+}
+
+#bubble-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0;
+}
+
+
+/* Company Section */
+
+.company-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.company-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.company-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+}
+
+
+/* Project Cards */
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+.project-details {
+    padding: 1.5rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.tech-item {
+    background: rgba(46, 204, 113, 0.15);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.code-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--dark-blue);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.code-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+
+/* Certification Section */
+
+.certification-section {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-image {
+    max-width: 800px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .company-title {
+        font-size: 2rem;
+    }
+    .company-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .project-image {
+        height: 250px;
+        margin-bottom: 1.5rem;
+    }
+}

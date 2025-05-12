@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-section {
+            height: 100vh;
+            background: #0a192f;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-item {
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .name {
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00ff88, #00ffee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .designation {
+            font-size: 2rem;
+            color: #64ffda;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .designation::after {
+            content: "|";
+            animation: blink 1s infinite;
+            color: #64ffda;
+            margin-left: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin: 3rem 0;
+        }
+        
+        .skill-item {
+            padding: 20px;
+            background: rgba(17, 34, 64, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: #64ffda;
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .fixed-buttons {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn-custom {
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-work {
+            background: #64ffda;
+            color: #0a192f;
+            border: 2px solid #64ffda;
+        }
+        
+        .btn-contact {
+            background: transparent;
+            color: #64ffda;
+            border: 2px solid #64ffda;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0 10px;
+        }
+        
+        .viz-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .badge {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            .designation {
+                font-size: 1.5rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .btn-custom {
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <!-- Slide 1 - Core Skills -->
+                <div class="carousel-item active">
+                    <div class="slide-content">
+                        <h1 class="name">Thirupati</h1>
+                        <div class="designation" id="designation">Data Scientist</div>
+
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-python skill-icon" style="color: #3776ab"></i>
+                                <h4 style="color: #64ffda">Python</h4>
+                                <p class="text-light small">Advanced Programming</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">Data Analysis</h4>
+                                <p class="text-light small">Pandas, NumPy, SQL</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                                <h4 style="color: #64ffda">Statistics</h4>
+                                <p class="text-light small">Probability & Distribution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - ML/NLP -->
+                <div class="carousel-item">
+                    <div class="slide-content">
+                        <h2 class="designation">ML & NLP Expert</h2>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-robot skill-icon" style="color: #00ffee"></i>
+                                <h4 style="color: #64ffda">Machine Learning</h4>
+                                <p class="text-light small">Scikit-learn, XGBoost</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain skill-icon" style="color: #ff8e53"></i>
+                                <h4 style="color: #64ffda">Deep Learning</h4>
+                                <p class="text-light small">TensorFlow, PyTorch</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-comments skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">NLP</h4>
+                                <p class="text-light small">Transformers, NLTK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - Visualization -->
+                <div class="carousel-item">
+                    <div class="slide-content">
+                        <h2 class="designation">Data Analysis Core</h2>
+                        <div class="skills-grid">
+                            <!-- EDA Card -->
+                            <div class="skill-item">
+                                <i class="fas fa-search-plus skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">Exploratory Analysis</h4>
+                                <div class="viz-features">
+                                    <span class="badge">Data Cleaning</span>
+                                    <span class="badge">Summary Statistics</span>
+                                    <span class="badge">Pattern Recognition</span>
+                                    <span class="badge">Outlier Detection</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-bar skill-icon" style="color: #1f77b4"></i>
+                                <h4 style="color: #64ffda">Data Visualization</h4>
+                                <div class="viz-features">
+                                    <span class="badge">Distributions</span>
+                                    <span class="badge">Correlation Analysis</span>
+                                    <span class="badge">Trend Analysis</span>
+                                    <span class="badge">Interactive Plots</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                                <h4 style="color: #64ffda">Statistical Methods</h4>
+                                <div class="viz-features">
+                                    <span class="badge">Hypothesis Testing</span>
+                                    <span class="badge">Probability Theory</span>
+                                    <span class="badge">Regression Analysis</span>
+                                    <span class="badge">multivariate Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+            </div>
+
+            <!-- Fixed Buttons -->
+            <div class="fixed-buttons">
+                <a href="#projects" class="btn btn-work btn-custom">View My Work</a>
+                <a href="#contact" class="btn btn-contact btn-custom">Contact Me</a>
+            </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Animated Designation
+        const designations = [
+            "Data Scientist",
+            "ML Engineer",
+            "Python Developer",
+            "NLP Specialist",
+            "Data Analyst"
+        ];
+        let currentDesignation = 0;
+        const designationElement = document.getElementById('designation');
+
+        function updateDesignation() {
+            designationElement.style.opacity = 0;
+            setTimeout(() => {
+                designationElement.textContent = designations[currentDesignation];
+                designationElement.style.opacity = 1;
+                currentDesignation = (currentDesignation + 1) % designations.length;
+            }, 500);
+        }
+        setInterval(updateDesignation, 2000);
+    </script>
+</body>
+
+</html>

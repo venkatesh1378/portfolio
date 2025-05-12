@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Data Science Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+
+    <!--<span class="logo-text">DS</span>Portfolio-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">DS portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--<section class="hero-section" id="home">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                 Slide 1 - Core Skills 
+    <div class="carousel-item active">
+        <div class="slide-content">
+            <h1 class="name">venkatesh sura</h1>
+            <div class="designation" id="designation">Data Scientist</div>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon" style="color: #3776ab"></i>
+                    <h4 style="color: #64ffda">Python</h4>
+                    <p class="text-light small">Advanced Programming</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line skill-icon" style="color: #00ff88"></i>
+                    <h4 style="color: #64ffda">Data Analysis</h4>
+                    <p class="text-light small">Pandas, NumPy, SQL</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                    <h4 style="color: #64ffda">Statistics</h4>
+                    <p class="text-light small">Probability & Distribution</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     Slide 2 - ML/NLP 
+                <div class="carousel-item">
+                    <div class="slide-content">
+                        <h2 class="designation">ML & NLP Expert</h2>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-robot skill-icon" style="color: #00ffee"></i>
+                                <h4 style="color: #64ffda">Machine Learning</h4>
+                                <p class="text-light small">Scikit-learn, XGBoost</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain skill-icon" style="color: #ff8e53"></i>
+                                <h4 style="color: #64ffda">Deep Learning</h4>
+                                <p class="text-light small">TensorFlow, PyTorch</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-comments skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">NLP</h4>
+                                <p class="text-light small">Transformers, NLTK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+     Slide 3 - Visualization 
+    <div class="carousel-item">
+        <div class="slide-content">
+            <h2 class="designation">Data Analysis Core</h2>
+            <div class="skills-grid">
+                EDA Card 
+                <div class="skill-item">
+                    <i class="fas fa-search-plus skill-icon" style="color: #00ff88"></i>
+                    <h4 style="color: #64ffda">Exploratory Analysis</h4>
+                    <div class="viz-features">
+                        <span class="badge">Data Cleaning</span>
+                        <span class="badge">Summary Statistics</span>
+                        <span class="badge">Pattern Recognition</span>
+                        <span class="badge">Outlier Detection</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-bar skill-icon" style="color: #1f77b4"></i>
+                    <h4 style="color: #64ffda">Data Visualization</h4>
+                    <div class="viz-features">
+                        <span class="badge">Distributions</span>
+                        <span class="badge">Correlation Analysis</span>
+                        <span class="badge">Trend Analysis</span>
+                        <span class="badge">Interactive Plots</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                    <h4 style="color: #64ffda">Statistical Methods</h4>
+                    <div class="viz-features">
+                        <span class="badge">Hypothesis Testing</span>
+                        <span class="badge">Probability Theory</span>
+                        <span class="badge">Regression Analysis</span>
+                        <span class="badge">multivariate Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide-content">
+            <h2 class="designation">ML & NLP Expert</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-robot skill-icon" style="color: #00ffee"></i>
+                    <h4 style="color: #64ffda">Machine Learning</h4>
+                    <p class="text-light small">Scikit-learn, XGBoost</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain skill-icon" style="color: #ff8e53"></i>
+                    <h4 style="color: #64ffda">Deep Learning</h4>
+                    <p class="text-light small">TensorFlow, PyTorch</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-comments skill-icon" style="color: #00ff88"></i>
+                    <h4 style="color: #64ffda">NLP</h4>
+                    <p class="text-light small">Transformers, NLTK</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+     Carousel Controls 
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               </button>
+    </div>
+
+     Fixed Buttons 
+
+    </div>
+    <div class="fixed-buttons">
+        <a href="#projects" class="btn btn-work btn-custom">View My Work</a>
+        <a href="#contact" class="btn btn-contact btn-custom">Contact Me</a>
+    </div>
+    about section starting
+    </section> -->
+
+    <section class="hero-section" id="home">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <!-- Slide 1 - Core Skills -->
+                <div class="carousel-item active">
+                    <div class="slide-content">
+                        <h1 class="name">venkatesh sura</h1>
+                        <div class="designation" id="designation">Data Scientist</div>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-python skill-icon" style="color: #3776ab"></i>
+                                <h4 style="color: #64ffda">Python</h4>
+                                <p class="text-light small">Advanced Programming</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">Data Analysis</h4>
+                                <p class="text-light small">Pandas, NumPy, SQL</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                                <h4 style="color: #64ffda">Statistics</h4>
+                                <p class="text-light small">Probability & Distribution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 - Data Analysis Core -->
+                <div class="carousel-item">
+                    <div class="slide-content">
+                        <h2 class="designation">Data Analysis Core</h2>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-search-plus skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">Exploratory Analysis</h4>
+                                <div class="viz-features">
+                                    <span class="badge">Data Cleaning</span>
+                                    <span class="badge">Summary Statistics</span>
+                                    <span class="badge">Pattern Recognition</span>
+                                    <span class="badge">Outlier Detection</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-bar skill-icon" style="color: #1f77b4"></i>
+                                <h4 style="color: #64ffda">Data Visualization</h4>
+                                <div class="viz-features">
+                                    <span class="badge mb-2">Distributions</span>
+                                    <span class="badge">Correlation Analysis</span>
+                                    <span class="badge">Trend Analysis</span>
+                                    <span class="badge">Interactive Plots</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-calculator skill-icon" style="color: #ff6b6b"></i>
+                                <h4 style="color: #64ffda">Statistical Methods</h4>
+                                <div class="viz-features">
+                                    <span class="badge">Hypothesis Testing</span>
+                                    <span class="badge">Probability Theory</span>
+                                    <span class="badge">Regression Analysis</span>
+                                    <span class="badge">multivariate Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 - ML & NLP -->
+                <div class="carousel-item">
+                    <div class="slide-content">
+                        <h2 class="designation">ML & NLP Expert</h2>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-robot skill-icon" style="color: #00ffee"></i>
+                                <h4 style="color: #64ffda">Machine Learning</h4>
+                                <p class="text-light small">Scikit-learn, XGBoost</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain skill-icon" style="color: #ff8e53"></i>
+                                <h4 style="color: #64ffda">Deep Learning</h4>
+                                <p class="text-light small">TensorFlow, PyTorch</p>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-comments skill-icon" style="color: #00ff88"></i>
+                                <h4 style="color: #64ffda">NLP</h4>
+                                <p class="text-light small">Transformers, NLTK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+        </div>
+
+        <div class="hero-buttons mt-5">
+            <a href="#projects" class="btn btn-work btn-custom">View My Work</a>
+            <a href="#contact" class="btn btn-contact btn-custom">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-particles" id="about-particles"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Profile Image -->
+                <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                    <div class="profile-pic-container">
+                        <img src="images/image.jpeg" alt="Profile" class="profile-pic">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+
+                    <div class="about-content">
+                        <p class="intro-text">
+                            Passionate Data Science graduate with expertise in machine learning and data analysis. Eager to apply academic knowledge and internship experience to real-world challenges.
+                        </p>
+                        <div class="core-competencies mb-4">
+                            <h3>Core Competencies</h3>
+                            <div class="competencies-list">
+                                <span class="competency">Predictive Modeling</span>
+                                <span class="competency">Data Visualization</span>
+                                <span class="competency">Machine Learning</span>
+
+
+                            </div>
+                        </div>
+
+                        <div class="certifications mb-4">
+                            <h3>Certifications</h3>
+                            <ul class="cert-list">
+                                <li><i class="fas fa-certificate"></i> Cisco Data Analytics Professional</li>
+                                <li><i class="fas fa-certificate"></i>Scalar Certificate Machine Learning</li>
+                                <li><i class="fas fa-certificate"></i> Great Learning Certificate Depp learning</li>
+                            </ul>
+                            <button class="cert-category-btn" onclick="window.location.href='certifications.html'">
+                                View All Certificates <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="internships mb-4">
+                            <h3>Internships</h3>
+                            <div class="internship-card">
+                                <h4>Data Analyst Intern @codeways solution</h4>
+                                <p class="duration">Jan 2024 - Feb 2024</p>
+                                <ul>
+                                    <li>Retrieved actionable insights by identifying trends,patterns for Data driven decisions.</li>
+                                    <li>Developed & implemented Ml models </li>
+
+                                </ul>
+                                <button class="view-details-btn" onclick="window.location.href='internship-details.html'">
+                                    View Full Details <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div><br>
+                            <div class="resume-download">
+                                <a href="Sura_Venkatesh_data_scientist.pdf" download class="resume-btn">
+                                    <i class="fas fa-download"></i> Download Resume
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <!-- about section ending -->
+    <h2 class="section-title" id="skills">Technical skills </h2>
+    <div class="tree-container">
+
+        <div class="particles" id="particles"></div>
+        <div class="central-node">
+            <div class="central-text">Data Science</div>
+        </div>
+    </div>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="dl">Deep Learning</button>
+                <button class=" filter-btn " data-filter="nlp">NLP</button>
+                <button class="filter-btn " data-filter="gen-ai">Gen-AI</button>
+            </div>
+
+            <!-- Projects Container -->
+            <div class="projects-container "></div>
+        </div>
+    </section>
+    <section id="contact" class="py-5 ">
+        <div class="stars "></div>
+
+        <div class="container ">
+            <h2 class="text-center mb-5 display-4 ">Get in Touch</h2>
+            <div class="row g-5 ">
+                <!-- Contact Info -->
+                <div class="col-md-6 ">
+                    <div class="contact-info-card bg-dark text-light p-4 rounded-4 shadow-lg h-100 ">
+                        <h3 class="mb-4 ">Let's Connect! 🌟</h3>
+                        <div class="d-flex align-items-center mb-4 ">
+                            <div class="icon-box bg-primary rounded-circle p-3 me-3 ">
+                                <i class="fas fa-map-marker-alt fa-2x "></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p class="mb-0 ">hyderabad, telangana</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4 ">
+                            <div class="icon-box bg-primary rounded-circle p-3 me-3 ">
+                                <i class="fas fa-envelope fa-2x "></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p class="mb-0 ">tthirupat37@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-5 ">
+                            <a href="# " class="btn btn-outline-light btn-lg mx-2 "><i class="fab fa-github "></i></a>
+                            <a href="# " class="btn btn-outline-light btn-lg mx-2 "><i class="fab fa-linkedin "></i></a>
+                            <a href="# " class="btn btn-outline-light btn-lg mx-2 "><i class="fab fa-twitter "></i></a>
+                        </div>
+                        <div class="mt-5" id="map"></div>
+
+
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <!-- HTML -->
+                <!-- HTML -->
+                <div class="col-md-6">
+                    <div class="contact-form-card bg-light p-4 rounded-4 shadow-lg h-100">
+                        <h3 class="mb-4 text-primary">Send me a message</h3>
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Your Name</label>
+                                <input type="text" class="form-control form-control-lg input-field" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Email Address</label>
+                                <input type="email" class="form-control form-control-lg input-field" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Subject</label>
+                                <input type="text" class="form-control form-control-lg input-field" placeholder="Project Inquiry" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">Message</label>
+                                <textarea class="form-control form-control-lg input-field" rows="5" placeholder="Your message..." required></textarea>
+                                <div class="text-end text-muted mt-2 char-count"><span>0</span>/500</div>
+                            </div>
+
+                            <div class="d-flex gap-3 flex-wrap justify-content-end">
+
+                                <button type="button" class="btn btn-lg clear-btn">
+                                <i class="fas fa-eraser me-2"></i>Clear Form
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                    <span class="submit-text">Send Message</span>
+                    <div class="spinner-border spinner-border-sm d-none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
+                            </div>
+                        </form>
+                        <div id="errorMessage" class="alert alert-danger mt-3 d-none"></div>
+                        <div id="successMessage" class="alert alert-success mt-3 d-none"></div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer-section bg-dark text-light pt-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Brand Column -->
+                <div class="col-lg-4 text-center text-lg-start">
+                    <div class="footer-brand">
+                        <h3 class="text-gradient mb-3">Venkatesh</h3>
+                        <p class="footer-tagline">Data Science Specialist</p>
+                        <div class="mt-4">
+                            <a href="#home" class="btn btn-cyber btn-sm px-4">
+                                <i class="fas fa-arrow-up me-2"></i>Return Top
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h4 class="footer-heading mb-4">Navigation</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#skills" class="footer-link">Skills Matrix</a>
+                        <a href="#about" class="footer-link">About Me</a>
+
+                    </div>
+                </div>
+
+                <!-- Social Column -->
+                <div class="col-lg-4 text-center text-lg-end">
+                    <h4 class="footer-heading mb-4">Digital Presence</h4>
+                    <div class="social-wrapper">
+                        <a href="https://github.com/venkatesh1378" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="www.linkedin.com/in/sura-venkatesh" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4 mb-4">
+                        <a href="mailto:tthirupat37@gmail.com" class="btn btn-cyber">
+                            <i class="fas fa-paper-plane me-2 "></i>Quick Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js "></script>
+<!-- Custom JS -->
+<script src="script.js "></script>
+
+</html>

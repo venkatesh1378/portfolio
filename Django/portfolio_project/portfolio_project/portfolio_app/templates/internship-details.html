@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="intership-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="internship-page">
+    <!-- 3D Bubble Background -->
+    <canvas id="bubble-canvas"></canvas>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Company Details -->
+            <section class="company-section">
+                <h1 class="company-title">Codeways Machine Learning Internship</h1>
+                <div class="company-info">
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>1 Months (Jan 2024- Feb 2024)</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects-section">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/churn.png" alt="Project 1" class="project-image">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="project-details">
+                                <h3>CUSTOMER CHURN PREDICTION</h3>
+                                <p class="project-description">
+                                    Identify the patterns indicating a higher likelihood of customers leaving, enabling proactive retention strategies and developed an ML model on it and acheived 85% accuracy.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">Numpy</span>
+                                    <span class="tech-item">Pandas</span>
+                                    <span class="tech-item">Matplotlib</span>
+                                    <span class="tech-item">Scikit-learn</span>
+                                </div>
+                                <a href="https://github.com/venkatesh1378/CODEWAYS-INTERNSHIP/blob/main/churnprediction.ipynb" class="code-btn">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/credit_card.webp" alt="Project 2" class="project-image">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="project-details">
+                                <h3>CREDICT CARD FRAUD DETECTION</h3>
+                                <p class="project-description">
+                                    Developed machine learning model to analyze transaction patterns and classify transactions as fraudulent or legitimate.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">Scikit-learn</span>
+                                    <span class="tech-item">Pandas</span>
+                                    <span class="tech-item">Matplotlib</span>
+                                </div>
+                                <a href="https://github.com/venkatesh1378/CODEWAYS-INTERNSHIP/blob/main/creditcard.ipynb" class="code-btn">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/spam.jpeg" alt="Project 2" class="project-image">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="project-details">
+                                <h3>SPAM SMS DETECTION </h3>
+                                <p class="project-description">
+
+
+                                    Spam SMS detection uses machine learning models to analyze message content , classifying texts as spam or legitimate to filter unwanted messages, enhance user security, and reduce phishing/scam risks.
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">Scikit-learn</span>
+                                    <span class="tech-item">pandas</span>
+                                    <span class="tech-item">Matplotlib</span>
+
+                                </div>
+                                <a href="https://github.com/venkatesh1378/CODEWAYS-INTERNSHIP/blob/main/spam%20sms.ipynb" class="code-btn">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certification Section -->
+            <section class="certification-section">
+                <h2 class="certification-title">Internship Certification</h2>
+                <img src="images/intern_completed.jpg" alt="Certification" class="certificate-image">
+                <div class="text-center mt-4">
+                    <a href="index.html" class="home-redirect-btn">
+                        <i class="fas fa-home"></i> Return to Home
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="internship-effects.js"></script>
+</body>
+
+</html>

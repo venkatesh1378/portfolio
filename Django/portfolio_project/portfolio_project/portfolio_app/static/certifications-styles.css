@@ -1,0 +1,213 @@
+/* Certification Page Styles */
+
+
+/* Certificates Section */
+
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.certificate-card {
+    flex: 1 1 calc(25% - 1rem);
+    /* 4 cards per row */
+    max-width: 300px;
+    min-width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    /* Fixed height for images */
+    object-fit: contain;
+    border-radius: 5px;
+    /* Ensures image covers container */
+    object-position: center;
+    border-bottom: 2px solid #eee;
+}
+
+.certificate-details {
+    padding: 1rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.certificate-details h5 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.certificate-image-container {
+    flex: 1;
+    /* Allows image area to grow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    /* Optional background */
+}
+
+
+/* Responsive Design 
+
+@media (max-width: 1024px) {
+    .certificate-card {
+        flex: 1 1 calc(33.33% - 1rem);
+        /* 3 cards per row 
+    }
+}
+
+
+/*
+@media (max-width: 768px) {
+    .certificate-card {
+        flex: 1 1 calc(50% - 1rem);
+        2 cards per row 
+    }
+    .certificate-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        flex: 1 1 100%;
+         1 card per row 
+    }
+    .certificate-image {
+        height: 160px;
+    }
+}*/
+
+@media (max-width: 1024px) {
+    .certificate-card {
+        flex: 1 1 calc(33.33% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .certificate-card {
+        flex: 1 1 calc(50% - 1rem);
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Force Image Full Visibility */
+
+.certificate-card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+/* Filter Buttons */
+
+.cert-filter {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-filter.active {
+    background: #007bff;
+    color: white;
+}
+
+.certification-page {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: #ecf0f1;
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+.cert-filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.cert-filter {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cert-filter.active,
+.cert-filter:hover {
+    background: #2ecc71;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cert-category-btn {
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    color: #2c3e50;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cert-category-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+}
+
+.back-btn {
+    color: #2ecc71;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #27ae60;
+}
